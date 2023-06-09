@@ -1,0 +1,57 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    transition: all 0.3s ease;
+    background-color: aliceblue;
+}
+
+.fixed-position-new {
+    position: fixed;
+    top: 0;
+    z-index: 1030;
+}
+
+.custom_dark_mode_button {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    border-radius: 15px;
+}
+
+.timer_element {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1030;
+    border-radius: 15px;
+}
+
+nav {
+    padding: auto;
+    border-radius: 35px;
+}
+
+.active {
+    border-radius: 15px;
+    background-color: rgb(215, 199, 107);
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.pages {
+    height: 100%;
+    border-radius: 35px;
+    margin: 1vh 0 1vh 0;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3), -5px -5px 5px 5px rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease-in-out;
+}
+
+#carousel-control {
+    position: relative;
+    bottom: 25px;
+}

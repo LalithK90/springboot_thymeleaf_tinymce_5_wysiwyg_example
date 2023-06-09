@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>BrainBoost MCQ - Improve Your Test Scores with Interactive Quizzes</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="Boost your test scores with BrainBoost MCQ, an interactive web app featuring a wide range of multiple-choice quizzes on various subjects. Improve your knowledge and ace your exams with our engaging learning platform."
+          name="description">
+    <meta content="BrainBoost MCQ, interactive quizzes, test scores, learning platform, multiple-choice questions"
+          name="keywords">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome icon-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <!-- custom css -->
+    <link href="./css/myCss.css" rel="stylesheet">
+    <!-- dark mode css -->
+    <link href="./css/dark-mode.css" rel="stylesheet">
+
+    <!-- Froala Editor -->
+    <link href="./css/froala_editor.css" rel="stylesheet">
+    <link href="./css/froala_style.css" rel="stylesheet">
+    <link href="./css/plugins/code_view.css" rel="stylesheet">
+    <link href="./css/plugins/draggable.css" rel="stylesheet">
+    <link href="./css/plugins/colors.css" rel="stylesheet">
+    <link href="./css/plugins/emoticons.css" rel="stylesheet">
+    <link href="./css/plugins/image_manager.css" rel="stylesheet">
+    <link href="./css/plugins/image.css" rel="stylesheet">
+    <link href="./css/plugins/line_breaker.css" rel="stylesheet">
+    <link href="./css/plugins/table.css" rel="stylesheet">
+    <link href="./css/plugins/char_counter.css" rel="stylesheet">
+    <link href="./css/plugins/video.css" rel="stylesheet">
+    <link href="./css/plugins/fullscreen.css" rel="stylesheet">
+    <link href="./css/plugins/file.css" rel="stylesheet">
+    <link href="./css/plugins/quick_insert.css" rel="stylesheet">
+    <link href="./css/plugins/help.css" rel="stylesheet">
+    <link href="./css/third_party/spell_checker.css" rel="stylesheet">
+    <link href="./css/plugins/special_characters.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div#editor {
+            width: 81%;
+            margin: auto;
+            text-align: left;
+        }
+
+        .ss {
+            background-color: red;
+        }
+    </style>
+
+    <!-- custom js -->
+    <script src="./js/myJs.js"></script>
+    <!-- dark mode js-->
+    <script defer src="./js/dark-mode-switch.min.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-12 col-md-10 mx-auto">
+            <!-- nav bar -->
+            <div class="row justify-content-center">
+                <nav
+                        class="navbar navbar-expand-md navbar-light bg-secondary font-weight-bold fixed-position-new mt-2">
+                    <a class="navbar-brand d-lg-none" href="#home">Brain Boost</a>
+                    <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                            class="navbar-toggler ml-auto custom-toggler" data-target="#navbarNav"
+                            data-toggle="collapse"
+                            type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./index.html"
+                                   onclick="setActiveLink(event)">Main</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home" onclick="setActiveLink(event)">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#our_works" onclick="setActiveLink(event)">Our
+                                    Works</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#community_works" onclick="setActiveLink(event)">Community
+                                    Works</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about" onclick="setActiveLink(event)">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#social_media" onclick="setActiveLink(event)">Social
+                                    Media</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact_us" onclick="setActiveLink(event)">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/question_template"
+                                   onclick="setActiveLink(event)">Question Template</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/rich_text_editor"
+                                   onclick="setActiveLink(event)">Rich Text Editor</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- dark mode button -->
+                <div class="navbar-light bg-light mt-5 timer_element text-center">
+                    <div class=" custom-control custom-switch  custom_dark_mode_button mt-5 pt-5">
+                        <input class="custom-control-input" id="darkSwitch" type="checkbox"/>
+                        <label class="custom-control-label" for="darkSwitch"><i class="fa fa-moon-o"></i></label>
+                    </div>
+                </div>
+            </div>
+            <!-- Home Page -->
+            <section class="pages bg-light mt-5" id="home">
+                <form action="/rich_text_editor" id="first_form" method="POST">
+                    <label for="myEditor">Sample
+                    </label>
+                    <textarea id="myEditor" name="description"></textarea>
+                    <button class="btn btn-danger" id="btnText" type="submit">Submit</button>
+                </form>
+            </section>
+            <!-- Home Page -->
+            <section class="pages bg-light mt-5" id="content">
+                <span id="text"></span>
+            </section>
+
+        </div>
+
+        <!-- footer -->
+        <footer>
+
+        </footer>
+
+    </div>
+    <div class="col-md-1">
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"
+        type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"
+        type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.7/purify.min.js" type="text/javascript"></script>
+
+<script src="./js/froala_editor.min.js" type="text/javascript"></script>
+<script src="./js/plugins/align.min.js" type="text/javascript"></script>
+<script src="./js/plugins/char_counter.min.js" type="text/javascript"></script>
+<script src="./js/plugins/code_beautifier.min.js" type="text/javascript"></script>
+<script src="./js/plugins/code_view.min.js" type="text/javascript"></script>
+<script src="./js/plugins/colors.min.js" type="text/javascript"></script>
+<script src="./js/plugins/draggable.min.js" type="text/javascript"></script>
+<script src="./js/plugins/emoticons.min.js" type="text/javascript"></script>
+<script src="./js/plugins/entities.min.js" type="text/javascript"></script>
+<script src="./js/plugins/file.min.js" type="text/javascript"></script>
+<script src="./js/plugins/font_size.min.js" type="text/javascript"></script>
+<script src="./js/plugins/font_family.min.js" type="text/javascript"></script>
+<script src="./js/plugins/fullscreen.min.js" type="text/javascript"></script>
+<script src="./js/plugins/image.min.js" type="text/javascript"></script>
+<script src="./js/plugins/image_manager.min.js" type="text/javascript"></script>
+<script src="./js/plugins/line_breaker.min.js" type="text/javascript"></script>
+<script src="./js/plugins/inline_style.min.js" type="text/javascript"></script>
+<script src="./js/plugins/link.min.js" type="text/javascript"></script>
+<script src="./js/plugins/lists.min.js" type="text/javascript"></script>
+<script src="./js/plugins/paragraph_format.min.js" type="text/javascript"></script>
+<script src="./js/plugins/paragraph_style.min.js" type="text/javascript"></script>
+<script src="./js/plugins/quick_insert.min.js" type="text/javascript"></script>
+<script src="./js/plugins/quote.min.js" type="text/javascript"></script>
+<script src="./js/plugins/table.min.js" type="text/javascript"></script>
+<script src="./js/plugins/save.min.js" type="text/javascript"></script>
+<script src="./js/plugins/url.min.js" type="text/javascript"></script>
+<script src="./js/plugins/video.min.js" type="text/javascript"></script>
+<script src="./js/plugins/help.min.js" type="text/javascript"></script>
+<script src="./js/plugins/print.min.js" type="text/javascript"></script>
+<script src="./js/third_party/spell_checker.min.js" type="text/javascript"></script>
+<script src="./js/plugins/special_characters.min.js" type="text/javascript"></script>
+<script src="./js/plugins/word_paste.min.js" type="text/javascript"></script>
+
+<script>
+
+    const editor = new FroalaEditor('#myEditor', {
+        imageEditButtons: ['imageReplace', 'imageRemove'],
+        imageInsertButtons: ['imageBack', '|', 'imageUpload'],
+        imageDefaultWidth: 150,
+        imageUploadMethod: 'POST',
+        // Set the image upload URL.
+        imageUploadURL: '/upload_image',
+
+        imageManagerLoadURL: '/load/{id}',
+        // Set the image delete URL.
+        imageManagerDeleteURL: '/delete/{id}',
+
+        //Validation
+        imageAllowedTypes: ['jpeg', 'jpg', 'png'],
+        // Set the max image size to 10MB.
+        imageMaxSize: 1024 * 1024 * 10,
+
+    });
+
+
+</script>
+
+</body>
+
+</html>
