@@ -7,53 +7,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
-    <!--    <script src="/webjars/tinymce/5.10.7/icons/default/icons.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/advlist/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/anchor/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/autolink/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/autoresize/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/autosave/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/bbcode/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/charmap/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/code/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/codesample/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/colorpicker/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/contextmenu/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/directionality/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/emoticons/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/fullpage/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/fullscreen/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/help/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/hr/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/image/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/imagetools/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/importcss/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/insertdatetime/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/link/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/lists/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/media/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/nonbreaking/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/noneditable/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/preview/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/print/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/quickbars/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/save/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/searchreplace/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/spellchecker/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/table/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/tabfocus/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/template/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/textcolor/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/textpattern/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/toc/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/visualblocks/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/visualchars/plugin.min.js"></script>-->
-    <!--    <script src="/webjars/tinymce/5.10.7/plugins/wordcount/plugin.min.js"></script>-->
-
-
-    <!--    <script src="/webjars/tinymce/5.10.7/themes/silver/theme.min.js"></script>-->
-
-
     <script src="/webjars/tinymce/5.10.7/tinymce.js"></script>
     <script src="/webjars/tinymce/5.10.7/jquery.tinymce.min.js"></script>
 
@@ -71,16 +24,34 @@
 </section>
 
 <script>
+
     tinymce.init({
-        selector: '#myTextarea',
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tableofcontents footnotes mergetags autocorrect typography inlinecss',
-        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+        selector: 'textarea',  // change this value according to your HTML
+        height: 300,
+        plugins: ['a11ychecker ', 'advcode ', 'advtable ', 'anchor ', 'autocorrect ',
+            'autosave ', 'editimage', 'linkchecker ', ' media ', 'mediaembed ', 'pageembed ',
+            'powerpaste ', 'searchreplace ', 'table ', 'template ', 'tinymcespellchecker ', 'typography ', 'visualblocks', ' wordcount',
+            'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+            'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media',
+            'table', 'emoticons', 'template', 'help'
+        ],
+        toolbar: 'undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | ' +
+            'bullist numlist outdent indent | table link image media pageembed  | print preview media fullscreen | ' +
+            'forecolor backcolor emoticons | spellcheckdialog a11ycheck typography code | help',
+        menu: {
+            favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons'}
+        },
+        menubar: 'favs file edit view insert format tools table help',
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+        browser_spellcheck: true,
+        contextmenu: false,
+        a11ychecker_level: 'aaa',
+        typography_langs: ['en-US'],
+        typography_default_lang: 'en-US',
+        advcode_inline: true,
         image_advtab: true,
         images_upload_handler: function (blobInfo, success, failure) {
-            // Here, you can implement the image conversion functionality without uploading to a server
-            // You can convert the image to a data URL and insert it into the editor
-            // Example:
-            var reader = new FileReader();
+            let reader = new FileReader();
             reader.onload = function (e) {
                 success(e.target.result);
             };

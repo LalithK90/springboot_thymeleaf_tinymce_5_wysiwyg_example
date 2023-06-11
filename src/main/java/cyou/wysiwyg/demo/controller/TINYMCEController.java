@@ -23,7 +23,7 @@ public class TINYMCEController {
     public String save(@ModelAttribute Demo demo) {
         System.out.println(demo.getDescription());
         demoService.save(demo);
-        return "rich_text_editor";
+        return "tinymce";
     }
 
     @GetMapping("/findAll")
