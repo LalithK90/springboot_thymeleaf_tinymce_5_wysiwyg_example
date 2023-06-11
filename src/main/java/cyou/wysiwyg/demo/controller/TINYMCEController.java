@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class TINYMCEController {
     private final DemoService demoService;
 
+
     @GetMapping("/tinymce")
     public String tinymce() {
         return "tinymce";

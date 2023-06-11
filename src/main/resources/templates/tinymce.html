@@ -24,6 +24,7 @@
 </section>
 
 <section>
+
     <div class="container">
         <span id="value"></span>
     </div>
@@ -34,12 +35,49 @@
     tinymce.init({
         selector: 'textarea',  // change this value according to your HTML
         height: 300,
-        plugins: ['a11ychecker', 'advcode', 'advtable', 'anchor', 'autocorrect',
-            'autosave', 'editimage', 'linkchecker', 'media', 'mediaembed', 'pageembed',
-            'powerpaste', 'searchreplace', 'table', 'template', 'tinymcespellchecker', 'typography', 'visualblocks', 'wordcount',
-            'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
-            'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media',
-            'table', 'emoticons', 'template', 'help'
+        plugins: [
+            'advlist',
+            'anchor',
+            'autolink',
+            'autoresize',
+            'autosave',
+            'bbcode',
+            'charmap',
+            'code',
+            'codesample',
+            'contextmenu',
+            'directionality',
+            'emoticons',
+            'fullpage',
+            'fullscreen',
+            'help',
+            'hr',
+            'image',
+            'imagetools',
+            'importcss',
+            'insertdatetime',
+            'legacyoutput',
+            'link',
+            'lists',
+            'media',
+            'nonbreaking',
+            'noneditable',
+            'pagebreak',
+            'paste',
+            'preview',
+            'print',
+            'quickbars',
+            'save',
+            'searchreplace',
+            'tabfocus',
+            'table',
+            'template',
+            'textcolor',
+            'textpattern',
+            'toc',
+            'visualblocks',
+            'visualchars',
+            'wordcount',
         ],
         toolbar: 'undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | ' +
             'bullist numlist outdent indent | table link image media pageembed  | print preview media fullscreen | ' +
@@ -51,9 +89,6 @@
         content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
         browser_spellcheck: true,
         contextmenu: false,
-        a11ychecker_level: 'aaa',
-        typography_langs: ['en-US'],
-        typography_default_lang: 'en-US',
         advcode_inline: true,
         image_advtab: true,
         images_upload_handler: function (blobInfo, success, failure) {
@@ -67,9 +102,45 @@
             editor.on("change", function () {
                 calculateSize();
             });
+        }, template_mdate_format: '%m/%d/%Y : %H:%M',
+        template_replace_values: {
+            username: 'Jack Black',
+            staffid: '991234',
+            inboth_username: 'Famous Person',
+            inboth_staffid: '2213',
         },
-
+        template_preview_replace_values: {
+            preview_username: 'Jack Black',
+            preview_staffid: '991234',
+            inboth_username: 'Famous Person',
+            inboth_staffid: '2213',
+        },
+        templates: [
+            {
+                title: 'Date modified example',
+                description: 'Adds a timestamp indicating the last time the document modified.',
+                content: '<p>Last Modified: <time class="mdate">This will be replaced with the date modified.</time></p>'
+            },
+            {
+                title: 'Replace values example',
+                description: 'These values will be replaced when the template is inserted into the editor content.',
+                content: '<p>Name: {$username}, StaffID: {$staffid}</p>'
+            },
+            {
+                title: 'Replace values preview example',
+                description: 'These values are replaced in the preview, but not when inserted into the editor content.',
+                content: '<p>Name: {$preview_username}, StaffID: {$preview_staffid}</p>'
+            },
+            {
+                title: 'Replace values preview and content example',
+                description: 'These values are replaced in the preview, and in the content.',
+                content: '<p>Name: {$inboth_username}, StaffID: {$inboth_staffid}</p>'
+            }
+        ],
+        skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : 'oxide'),
+        content_css: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default')
     });
+
 
     function calculateSize() {
         let editorContent = tinymce.activeEditor.getContent();
